@@ -19,8 +19,8 @@ const App : React.FC = () => {
     setCharacters(apiResponse.data.data);
   };
   useEffect(() => {
-    getCharacters(1);
-  }, []);
+    getCharacters(currentPage);
+  }, [currentPage]);
 
   return (
     <div className="page">
