@@ -22,11 +22,15 @@ const App : React.FC = () => {
     getCharacters(currentPage);
   }, [currentPage]);
 
+  const [characterFavourites, setCharacterFavourites] = useState<Array<number>>([]);
+
   return (
     <div className="page">
       <Header currentPage={currentPage} />
       <Navigation currentPage={currentPage} setCurrentPage={setCurrentPage} />
-      <CharacterContainer characters={characters} />
+      <CharacterContainer characters={characters} 
+                          characterFavourites={characterFavourites} 
+                          updateFavourites={setCharacterFavourites}  /> 
     </div>
   );
 }
